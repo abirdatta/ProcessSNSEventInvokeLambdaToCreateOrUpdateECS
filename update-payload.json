@@ -1,0 +1,24 @@
+{
+  "updateOrCreate": "update",
+  "clusterName": "ecs-test-cluster",
+  "serviceName": "ecs-test-service",
+  "desiredCount": 1,
+  "region": "us-east-1",
+  "containerDefinitions": [
+    {
+      "memory": 500,
+      "portMappings": [
+        {
+          "hostPort": 8888,
+          "containerPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "name": "ecs-test-container",
+      "image": "abirdatta/poc:v4",
+      "essential": true,
+      "cpu": 1
+    }
+  ],
+  "family": "ecs-test"
+}
